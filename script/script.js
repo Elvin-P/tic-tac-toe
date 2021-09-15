@@ -1,6 +1,18 @@
 const gameController = (() => {
+    const resetButton = document.querySelector(".game-reset");
     let xTurn = true;
     gameover = false;
+
+    const reset = () => {
+        gameBoard.init();
+        xTurn = true;
+        gameover = false;
+        displayController.setMessage("X's turn");
+    };
+
+    (() => {
+        resetButton.addEventListener("click", reset);
+    })();
 
     const clickHandler = target => {
         if (gameover) {
@@ -9,15 +21,11 @@ const gameController = (() => {
         xTurn ? gameBoard.addX(target.id) : gameBoard.addO(target.id);
         if (checkWin()) {
             displayController.setMessage(`${xTurn ? "X wins!" : "O wins!"}`);
-            toggleGameOver();
+            gameover = true;
             return;
         }
         xTurn = !xTurn;
         displayController.setMessage(`${xTurn ? "X's turn" : "O's turn"}`);
-    };
-
-    const toggleGameOver = () => {
-        gameover = !gameover;
     };
 
     const checkRows = () => {

@@ -74,3 +74,16 @@ body {
     border-left: 2px solid whitesmoke;
     border-top: 2px solid whitesmoke;
 }
+
+.game-reset {
+    display: block;
+    margin: 0 auto;
+    background-color: #11222b;
+    border: none;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 2rem;
+    color: whitesmoke;
+    cursor: pointer;
+    user-select: none;
+}
