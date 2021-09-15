@@ -24,6 +24,11 @@ const gameController = (() => {
             gameover = true;
             return;
         }
+        if (![...Object.values(gameBoard.getGameGrid())].includes("")) {
+            displayController.setMessage("It's a tie!");
+            gameover = true;
+            return;
+        }
         xTurn = !xTurn;
         displayController.setMessage(`${xTurn ? "X's turn" : "O's turn"}`);
     };
