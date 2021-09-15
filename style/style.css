@@ -1,0 +1,10 @@
+html,
+body {
+  height: 100%;
+  background-color: #11222b;
+}
+
+.status-bar {
+  width: 100%;
+  font-family: Montserrat;
+}
